@@ -1,0 +1,23 @@
+{
+  "name": "scholtz-school-of-music",
+  "version": "1.0.0",
+  "description": "The Scholtz School of Music website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scholtz-gnome/Scholtz-School-of-Music.git"
+  },
+  "author": "Stephen Scholtz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scholtz-gnome/Scholtz-School-of-Music/issues"
+  },
+  "homepage": "https://github.com/scholtz-gnome/Scholtz-School-of-Music#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
