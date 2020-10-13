@@ -15,4 +15,4 @@ app.listen(3000, () => console.log("Listening for requests on port 3000"));
 // Routes
 app.get("/", (req, res) => res.render("home"));
 
-app.get("/account", (req, res) => res.render("account"));
+app.get("/account", (req, res) => res.render("auth/account"));

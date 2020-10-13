@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <!-- FONT 1 -->
-  <!-- FONT 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
   <title>The Scholtz School of Music</title>
 </head>
@@ -14,26 +13,51 @@
 
   <nav>
     <ul class="mainNav">
-      <li><a href="">SIGN UP</a></li>
-      <li><a href="">RESOURCES</a></li>
-      <li><a href="">FIND ANSWERS</a></li>
-      <div class="dropdown">
-          <button class="dropbtn">ACCOUNT <i class="fas fa-chevron-circle-down"></i></button>
-          <div class="dropdown-content">
-            <a href="/account/profile">Profile</a>
-            <a href="/account/logout">Logout</a>
-          </div>
-      </div>
+      <li class="img">
+        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="logo">
+      </li>
+      <li class="dropdown first">
+        <button class="drop-button">SIGN UP</button>
+        <div class="drop-content">
+          <a href="/resources/profile">Guitar</a>
+          <a href="/resources/logout">Drums</a>
+          <a href="/resources/logout">Bass</a>
+          <a href="/resources/logout">Music Theory</a>
+        </div>
+      </li>
+      <li class="dropdown second">
+        <button class="drop-button">RESOURCES</button>
+        <div class="drop-content">
+          <a href="/resources/browse">Browse</a>
+          <a href="/resources/custom">Custom Resource</a>
+        </div>
+      </li>
+      <li class="dropdown second">
+        <button class="drop-button">FIND ANSWERS</button>
+        <div class="drop-content">
+          <a href="/resources/profile">FAQs</a>
+          <a href="/resources/logout">Ask a Question</a>
+        </div>
+      </li>
+      <li class="dropdown third">
+        <button class="drop-button"><a href="/account">ACCOUNT</a></button>
+        <div class="drop-content">
+          <a href="/account/lessons">Lessons</a>
+          <a href="/account/invoices">Invoices</a>
+          <a href="/account/logout">Logout</a>
+        </div>
+      </li>
+
     </ul>
   </nav>
 <!-- BODY -->
   <%- body %>
 
   <footer>
-    <h5>Find us on these platforms</h5>
+    <h4>Find us on these platforms</h4>
   </footer>
 
-  <script src="/js/script.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 </html>
