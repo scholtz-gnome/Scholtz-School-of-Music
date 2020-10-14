@@ -1,44 +1,55 @@
 body {
   margin: 0px;
   font-family: Roboto, sans-serif;
+  padding: 30px 30px 0 30px;
 }
 
 /* Main Nav */
-.mainNav {
-  background: #1D1D1B;
-  color: white;
+.mainNav { /* <nav> */
+  background: white;
+  color: #1D1D1B;
   height: 80px;
   padding: 0px;
-  list-style: none;
+  font-weight: 500;
   display: flex;
-  font-weight: 600;
+  justify-content: space-between;
 }
 
-.mainNav li {
+.mainNav div { /* image div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.mainNav div img { /* logo */
+  height: 64px;
+  width: auto;
+}
+
+.mainNav ul {
+  display: flex;
+}
+
+.mainNav ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.dropdown {
-  flex: 3;
-}
-
-.img {
-  flex: 3;
+  flex: 1;
+  min-width: 200px;
 }
 
 .mainNav a, button, img {
-  color: white;
+  color: #1D1D1B;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  font-size: 21px;
+  font-size: 19px;
 }
 
-.mainNav a:hover, button:hover {
+.mainNav a:hover {
   background: #F1C54E;
   color: #1D1D1B;
 }
@@ -49,54 +60,49 @@ body {
 
 .first .drop-content {
   position: absolute;
-  width: 20%;
+  width: 200px;
   height: 320px;
   display: flex;
   flex-direction: column;
-  background: #1D1D1B;
-  top: -240px;
-  transition: top 200ms;
   z-index: -1;
+  top: -270px;
+  transition: top 200ms cubic-bezier(0, 0.25, 0, 1.03);
 }
 
 .second .drop-content {
   position: absolute;
-  width: 20%;
+  width: 200px;
   height: 160px;
   display: flex;
   flex-direction: column;
-  background: #1D1D1B;
-  top: -80px;
-  transition: top 200ms;
   z-index: -1;
+  top: -110px;
+  transition: top 200ms cubic-bezier(0, 0.25, 0, 1.03);
 }
 
 .third .drop-content {
   position: absolute;
-  width: 20%;
+  width: 200px;
   height: 240px;
   display: flex;
   flex-direction: column;
-  background: #1D1D1B;
-  top: -160px;
-  transition: top 200ms;
   z-index: -1;
-}
-
-.dropdown:hover > .drop-content {
-  top: 80px;
-  z-index: 0;
+  top: -190px;
+  transition: top 200ms cubic-bezier(0, 0.25, 0, 1.03);
 }
 
 .drop-content a {
   flex: 1;
   width: 100%;
+  color: white;
 }
 
-.space {
-  width: 5%;
+.dropdown:hover > .drop-content a {
+  color: #1D1D1B;
+  transition: color 200ms cubic-bezier(0.86, 0.02, 0.75, 0.77);
 }
 
-.fas {
-  opacity: 0.8;
+.dropdown:hover > .drop-content {
+  top: 110px;
+  z-index: 0;
 }

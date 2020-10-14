@@ -11,32 +11,36 @@
 </head>
 <body>
 
-  <nav>
-    <ul class="mainNav">
-      <li class="img">
-        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="logo">
-      </li>
+  <div class="space"></div>
+
+  <nav class="mainNav">
+    
+    <div class="img-container">
+      <img class="img" src="/images/png_SSOM_logomark_charcoal.png" alt="logo">
+    </div>
+
+    <ul>
       <li class="dropdown first">
-        <button class="drop-button">SIGN UP</button>
+        <button class="drop-button"><a href="/join">JOIN</a></button>
         <div class="drop-content">
-          <a href="/resources/profile">Guitar</a>
-          <a href="/resources/logout">Drums</a>
-          <a href="/resources/logout">Bass</a>
-          <a href="/resources/logout">Music Theory</a>
+          <a href="/join">Guitar</a>
+          <a href="/join">Drums</a>
+          <a href="/join">Bass</a>
+          <a href="/join">Music Theory</a>
         </div>
       </li>
       <li class="dropdown second">
-        <button class="drop-button">RESOURCES</button>
+        <button class="drop-button"><a href="/resources">RESOURCES</a></button>
         <div class="drop-content">
           <a href="/resources/browse">Browse</a>
           <a href="/resources/custom">Custom Resource</a>
         </div>
       </li>
       <li class="dropdown second">
-        <button class="drop-button">FIND ANSWERS</button>
+        <button class="drop-button"><a href="/contact">FIND ANSWERS</a></button>
         <div class="drop-content">
-          <a href="/resources/profile">FAQs</a>
-          <a href="/resources/logout">Ask a Question</a>
+          <a href="/contact/faq">FAQ</a>
+          <a href="/contact/ask">Ask a Question</a>
         </div>
       </li>
       <li class="dropdown third">
@@ -47,8 +51,8 @@
           <a href="/account/logout">Logout</a>
         </div>
       </li>
-
     </ul>
+    
   </nav>
 <!-- BODY -->
   <%- body %>
