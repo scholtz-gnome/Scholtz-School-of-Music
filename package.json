@@ -24,6 +24,7 @@
     "express-ejs-layouts": "^2.5.0",
     "mongoose": "^5.10.7",
     "nodemailer": "^6.4.13",
+    "nodemon": "^2.0.5",
     "validator": "^13.1.17"
   }
 }
