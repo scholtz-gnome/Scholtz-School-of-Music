@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
+const authMiddleware = require("./middleware/authMiddleware");
 const expressLayouts = require("express-ejs-layouts");
+const cookieParser = require("cookie-parser");
 
 // Routers
 const resourcesRouter = require("./routes/resourcesRouter");
@@ -13,6 +15,7 @@ const accountRouter = require("./routes/accountRouter");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 
 // View Engines
 app.set("layout", "layouts/main");
@@ -27,6 +30,8 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
   .catch(err => console.log(err));
 
 // Routes
+app.get("*", authMiddleware.checkUser);
+
 app.get("/", (req, res) => res.render("home"));
 
 app.use("/resources", resourcesRouter);
