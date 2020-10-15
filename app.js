@@ -3,7 +3,9 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 
 // Routers
+const resourcesRouter = require("./routes/resourcesRouter");
 const contactRouter = require("./routes/contactRouter");
+const accountRouter = require("./routes/accountRouter");
 
 // Middleware
 app.use(expressLayouts);
@@ -18,4 +20,10 @@ app.listen(3000, () => console.log("Listening for requests on port 3000"));
 // Routes
 app.get("/", (req, res) => res.render("home"));
 
-app.get("/account", (req, res) => res.render("auth/account"));
+app.use("/resources", resourcesRouter);
+
+app.use("/contact", contactRouter);
+
+app.use("/account", accountRouter);
+
+app.use((req, res) => res.render("404"));
