@@ -1,0 +1,21 @@
+<head>
+  <style>
+    .myContainer {
+      width: 60%;
+      padding: 30px;
+    }
+    a {
+      text-decoration: none;
+      color: #77c2b2;
+    }
+  </style>
+</head>
+<div class="myContainer">
+  <p>Dear <%= `${first} ${last}` %>,</p>
+  <h1>Confirm your email below</h1>
+  <p>Click the button below to confirm your email address:</p>
+  <button><a href="http://localhost:3000/account/<%= randomString %>" target="_blank">Confirm Email</a></button>
+
+  <p>Kind regards,</p>
+  <p>The Scholtz School of Music</p>
+</div>

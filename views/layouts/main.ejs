@@ -14,12 +14,14 @@
   <nav class="mainNav">
     
     <div class="img-container">
-      <img class="img" src="/images/png_SSOM_logomark_charcoal.png" alt="logo">
+      <a href="/">
+        <img class="img" src="/images/png_SSOM_logomark_charcoal.png" alt="logo">
+      </a>
     </div>
 
     <ul>
-      <li class="dropdown first">
-        <button class="drop-button"><a href="/join">JOIN</a></button>
+      <li class="dropdown join">
+        <button class="drop-button"><a href="/join">Join</a></button>
         <div class="drop-content">
           <a href="/join">Guitar</a>
           <a href="/join">Drums</a>
@@ -27,34 +29,44 @@
           <a href="/join">Music Theory</a>
         </div>
       </li>
-      <li class="dropdown second">
-        <button class="drop-button"><a href="/resources">RESOURCES</a></button>
+      <li class="dropdown resources">
+        <button class="drop-button"><a href="/resources">Resources</a></button>
         <div class="drop-content">
-          <a href="/resources/browse">Browse</a>
           <a href="/resources/custom">Custom Resource</a>
         </div>
       </li>
-      <li class="dropdown second">
-        <button class="drop-button"><a href="/contact">FIND ANSWERS</a></button>
+      <li class="dropdown contact">
+        <button class="drop-button"><a href="/contact">Find Answers</a></button>
         <div class="drop-content">
-          <a href="/contact/faq">FAQ</a>
           <a href="/contact/ask">Ask a Question</a>
         </div>
       </li>
-      <li class="dropdown third">
-        <button class="drop-button"><a href="/account">ACCOUNT</a></button>
+      <!-- If user is logged in, then display this, otherwise, display ... -->
+      <% if (user) { %>
+      <li class="dropdown account-user">
+        <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
         <div class="drop-content">
           <a href="/account/lessons">Lessons</a>
           <a href="/account/invoices">Invoices</a>
           <a href="/account/logout">Logout</a>
         </div>
       </li>
+      <!-- ... THIS: -->
+      <% } else { %>
+      <li class="dropdown account-noUser">
+        <button class="drop-button"><a href="/account">Account</a></button>
+        <div class="drop-content">
+          <a href="/account/login">Log In</a>
+          <a href="/account/signup">Sign Up</a>
+        </div>
+      </li>
+    <% } %>
     </ul>
     
   </nav>
 <!-- BODY -->
   <%- body %>
-
+  <hr>
   <footer>
     <h4>Find us on these platforms</h4>
   </footer>
