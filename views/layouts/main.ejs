@@ -39,7 +39,9 @@
           <a href="/contact/ask">Ask a Question</a>
         </div>
       </li>
-      <li class="dropdown account">
+      <!-- If user is logged in, then display this, otherwise, display ... -->
+      <% //if (user) { %>
+      <li class="dropdown account-user">
         <button class="drop-button"><a href="/account">ACCOUNT</a></button>
         <div class="drop-content">
           <a href="/account/lessons">Lessons</a>
@@ -47,6 +49,16 @@
           <a href="/account/logout">Logout</a>
         </div>
       </li>
+      <!-- ... THIS: -->
+      <% //} else { %>
+      <li class="dropdown account-noUser">
+        <button class="drop-button"><a href="/account">ACCOUNT</a></button>
+        <div class="drop-content">
+          <a href="/account/login">Log In</a>
+          <a href="/account/signup">Sign Up</a>
+        </div>
+      </li>
+    <% //} %>
     </ul>
     
   </nav>
