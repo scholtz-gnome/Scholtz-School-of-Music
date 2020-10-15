@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const expressLayouts = require("express-ejs-layouts");
 
+// Routers
+const contactRouter = require("./routes/contactRouter");
+
 // Middleware
 app.use(expressLayouts);
 app.use(express.static("public"));
