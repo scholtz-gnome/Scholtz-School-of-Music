@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/signup.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+  <link rel="icon" href="/images/png_SSOM_logomark_charcoal.png">
   <title>The Scholtz School of Music</title>
 </head>
 <body>
@@ -41,7 +44,7 @@
           <a href="/contact/ask">Ask a Question</a>
         </div>
       </li>
-      <!-- If user is logged in, then display this, otherwise, display ... -->
+
       <% if (user) { %>
       <li class="dropdown account-user">
         <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
@@ -51,7 +54,6 @@
           <a href="/account/logout">Logout</a>
         </div>
       </li>
-      <!-- ... THIS: -->
       <% } else { %>
       <li class="dropdown account-noUser">
         <button class="drop-button"><a href="/account">Account</a></button>
@@ -64,11 +66,14 @@
     </ul>
     
   </nav>
+
 <!-- BODY -->
   <%- body %>
-  <hr>
+
   <footer>
-    <h4>Find us on these platforms</h4>
+    <div class="box">
+      <h3>Find us on these platforms</h3>
+    </div>
   </footer>
 
   <script src="/js/main.js"></script>

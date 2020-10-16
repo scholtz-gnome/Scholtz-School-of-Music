@@ -1,13 +1,27 @@
-<button><a href="/resources">Back</a></button>
-<h1>Request a Custom Resource</h1>
-<p>Fill out the form below to a submit a custom resource form</p>
-<form action="">
-  <div>
-    <label for="title">Name of Resource</label>
-    <input name="title" id="title" type="text">
-  </div>
-  <div>
-    <label for="pages">Number of Pages</label>
-    <input name="pages" id="pages" type="number">
-  </div>
-</form>
+<div class="outline">
+  <header>
+    <h1>Request a Custom Resource</h1>
+    <button><a href="/resources">Back</a></button>
+  </header>
+  
+  <main>
+    
+    <p>Fill out the form below to a submit a custom resource form</p>
+  
+    <form>
+      <div class="signup">
+        <div class="input">
+          <input name="title" id="title" type="text" placeholder="resource name" class="field">
+        </div>
+        <div class="input">
+          <input name="pages" id="pages" type="number" placeholder="# of pages" class="field">
+        </div>
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+  
+    </form>
+  
+  </main>
+</div>

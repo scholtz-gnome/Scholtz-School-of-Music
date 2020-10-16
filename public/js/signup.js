@@ -36,7 +36,6 @@ form.addEventListener("submit", async (e) => {
     } else if (data) {
       location.assign(data.redirect);
     }
-    
 
   }
   catch (err) {
