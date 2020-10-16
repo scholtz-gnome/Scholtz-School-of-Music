@@ -1,12 +1,17 @@
 <header>
   <h1>Account</h1>
+  <% if (user) { %>
   <button><a href="/account/lessons">Lessons</a></button>
   <button><a href="/account/invoices">Invoices</a></button>
+  <% } %>
 </header>
 <main>
 <!-- if user is logged in -->
 <% if (user) { %>
   <h2>Welcome, <%= `${user.first} ${user.last}` %></h2>
+<% if (user.role.admin) { %>
+  <h3>Admin</h3>
+<% } %>
 <% } else { %>
   <h4>Have an account? Log in here:</h4>
   <button><a href="/account/login">Log In</a></button>

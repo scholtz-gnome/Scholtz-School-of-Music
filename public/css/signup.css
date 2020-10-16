@@ -4,13 +4,13 @@ form {
 }
 
 .outline {
-  border: 1px solid rgba(1, 1, 1, 0.1);
-  border-radius: 7px;
+  border: 1px solid rgba(1, 1, 1, 0.08);
+  border-radius: 10px;
   padding: 30px 0px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  margin: 2.5% 30% 6% 30%;
+  margin: 2.5% 30% 5% 30%;
 }
 
 .signup {
@@ -30,14 +30,21 @@ form {
 .field {
   width: 100%;
   height: 40px;
+  border-radius: 40px;
   border: 1px solid black;
-  border-radius: 30px;
+}
+
+.field:focus {
+  background: white;
+  border: 2px solid black;
 }
 
 .submit {
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .firstErrors, .lastErrors, .emailErrors, .passwordErrors {
+  margin-top: 5px;
   color: red;
+  font-size: 14px;
 }

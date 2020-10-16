@@ -28,6 +28,12 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   },
+  role: {
+    admin: Boolean,
+    student: Boolean,
+    parent: Boolean
+  },
+  children: Array,
   randomString: Number,
   created_at: {
     type: Date,

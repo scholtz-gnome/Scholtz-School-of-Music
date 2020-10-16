@@ -160,7 +160,7 @@ main button, header button {
   border: 2.5px solid #1D1D1B;
   border-radius: 45px;
   font-weight: 700;
-  transition: background 100ms, color 100ms;
+  transition: box-shadow 100ms, background 100ms, color 100ms;
 }
 
 main button:hover, header button:hover {
