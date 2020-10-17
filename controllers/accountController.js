@@ -68,9 +68,9 @@ const signup_post = async (req, res) => {
     const user = await User.create({ first, last, email, password, randomString });
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      host: "smtpout.secureserver.net",
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_ADDRESS,
         pass: process.env.EMAIL_PASSWORD,
@@ -82,7 +82,7 @@ const signup_post = async (req, res) => {
         console.log(err)
       } else {
         transporter.sendMail({
-          from: "scholtzschoolofmusic@gmail.com",
+          from: "info@scholtzschoolofmusic.co.za",
           to: email,
           subject: `Email Confirmation for ${first} ${last}`,
           html: data
