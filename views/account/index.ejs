@@ -1,8 +1,8 @@
 <header>
   <h1>Account</h1>
   <% if (user) { %>
-  <button><a href="/account/lessons">Lessons</a></button>
-  <button><a href="/account/invoices">Invoices</a></button>
+  <button class="submit"><a href="/account/lessons">Lessons</a></button>
+  <button class="submit"><a href="/account/invoices">Invoices</a></button>
   <% } %>
 </header>
 <main>
@@ -12,11 +12,11 @@
   <% if (user.role.admin) { %>
     <h3>Admin</h3>
   <% } %>
-  <button><a href="/account/logout">Logout</a></button>
+  <button class="submit"><a href="/account/logout">Logout</a></button>
 <% } else { %>
   <h4>Have an account? Log in here:</h4>
-  <button><a href="/account/login">Log In</a></button>
+  <button class="submit"><a href="/account/login">Log In</a></button>
   <h4>Otherwise, sign up here:</h4>
-  <button><a href="/account/signup">Sign Up</a></button>
+  <button class="submit"><a href="/account/signup">Sign Up</a></button>
 <% } %>
 </main>

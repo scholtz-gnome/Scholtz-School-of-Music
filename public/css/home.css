@@ -1,0 +1,64 @@
+#home {
+  margin: 21% 20%;
+}
+
+.home {
+  display: flex;
+}
+
+.home__sign-up {
+  background: #1D1D1B;
+  color: white;
+  padding: 2% 20%;
+}
+
+.home__sign-up div {
+  display: flex;
+  justify-content: center;
+}
+
+.home__sign-up section {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__sign-up .submit:hover {
+  background: #F1C54E;
+  color: #1D1D1B;
+}
+
+.home__resources {
+  color: #1D1D1B;
+  padding: 2% 20%;
+}
+
+.home__resources div {
+  display: flex;
+  justify-content: center;
+}
+
+.home__resources section {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__contact {
+  background: #1D1D1B;
+  color: white;
+  padding: 2% 20%;
+}
+
+.home__contact div {
+  display: flex;
+  justify-content: center;
+}
+
+.home__contact section {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__contact .submit:hover {
+  background: #F1C54E;
+  color: #1D1D1B;
+}
