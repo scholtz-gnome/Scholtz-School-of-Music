@@ -1,22 +1,20 @@
 <head>
-  <style>
-    .myContainer {
-      width: 60%;
-      padding: 30px;
-      margin: 0 auto;
+  <style type="text/css">
+
+    @font-face {
+      font-family: "Lato";
+      font-style: normal;
+      src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
     }
-    a {
-      text-decoration: none;
-      color: black;
-    }
+
   </style>
 </head>
-<div class="myContainer">
+<div style="padding: 20px 0px;">
   <p>Dear <%= `${first} ${last}` %>,</p>
-  <h1>Confirm your email below</h1>
-  <p>Click the button below to confirm your email address:</p>
-  <button><a href="https://scholtzschoolofmusic/account/<%= randomString %>" target="_blank">Confirm Email</a></button>
-
-  <p>Kind regards,</p>
+  <h1 style="font-family: Lato, sans-serif;">Confirm your email below</h1>
+  <button style="padding: 0px; margin: 10px 0px; width: 190px; height: 45px; border: 2.5px solid #1D1D1B; border-radius: 45px; font-weight: 700; background: white;">
+    <a style="padding: 5% 0px; text-align: center; color: black; text-decoration: none; display: block; width: 100%; height: 100%; font-size: 19px;" href="https://scholtzschoolofmusic.co.za/account/<%= randomString %>" target="_blank">Confirm Email</a>
+  </button>
+  <p style="margin-top: 20px;">Kind regards,</p>
   <p>The Scholtz School of Music</p>
 </div>

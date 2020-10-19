@@ -21,16 +21,13 @@ app.use(cookieParser());
 app.set("layout", "layouts/main");
 app.set("view engine", "ejs");
 
-// Connect to DB
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-  .then(res => {
-    console.log("Connected to DB");
-    app.listen(3000, () => console.log("Listening for requests on port 3000"));
-  })
-  .catch(err => console.log(err));
+const config = {
+  DB_CONNECTION: process.env.DB_CONNECTION,
+  PORT: process.env.PORT
+}
 
 // Routes
-app.get("*", authMiddleware.checkUser);
+app.use(authMiddleware.checkUser);
 
 app.get("/", (req, res) => res.render("home"));
 
@@ -41,3 +38,19 @@ app.use("/contact", contactRouter);
 app.use("/account", accountRouter);
 
 app.use((req, res) => res.render("404"));
+
+// Connect to DB
+(async () => {
+  try {
+    await mongoose.connect(config.DB_CONNECTION, { 
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    });
+    console.log("Connected to DB");
+    app.listen(config.PORT || 3000, () => console.log(`Listening for requests on port ${config.PORT}`));
+  }
+  catch (err) {
+    console.log(err)
+  }
+})();

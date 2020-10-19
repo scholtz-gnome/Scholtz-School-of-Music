@@ -9,9 +9,10 @@
 <!-- if user is logged in -->
 <% if (user) { %>
   <h2>Welcome, <%= `${user.first} ${user.last}` %></h2>
-<% if (user.role.admin) { %>
-  <h3>Admin</h3>
-<% } %>
+  <% if (user.role.admin) { %>
+    <h3>Admin</h3>
+  <% } %>
+  <button><a href="/account/logout">Logout</a></button>
 <% } else { %>
   <h4>Have an account? Log in here:</h4>
   <button><a href="/account/login">Log In</a></button>

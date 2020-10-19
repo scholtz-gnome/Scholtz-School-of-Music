@@ -21,8 +21,11 @@
         <img class="img" src="/images/png_SSOM_logomark_charcoal.png" alt="logo">
       </a>
     </div>
-
+    <% if (user) { %>
+    <ul data-user="<%= user %>" data-first="<%= user.first %>" data-last="<%= user.last %>">
+    <% } else { %>
     <ul>
+    <% } %>
       <li class="dropdown join">
         <button class="drop-button"><a href="/join">Join</a></button>
         <div class="drop-content">
