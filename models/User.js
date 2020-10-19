@@ -34,7 +34,10 @@ const userSchema = new Schema({
     parent: Boolean
   },
   children: Array,
-  randomString: Number,
+  randomString: {
+    type: Number,
+    date: Date.now
+  },
   created_at: {
     type: Date,
     default: Date.now()

@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const resourcesRouter = require("./routes/resourcesRouter");
 const contactRouter = require("./routes/contactRouter");
 const accountRouter = require("./routes/accountRouter");
+const joinRouter = require("./routes/joinRouter");
 
 // Middleware
 app.use(expressLayouts);
@@ -30,6 +31,8 @@ const config = {
 app.use(authMiddleware.checkUser);
 
 app.get("/", (req, res) => res.render("home"));
+
+app.use("/join", joinRouter);
 
 app.use("/resources", resourcesRouter);
 
