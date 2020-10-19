@@ -1,4 +1,28 @@
 const ul = document.querySelector("ul");
+const links = document.querySelectorAll("[data-discipline]");
+
+links.forEach(link => {
+  link.addEventListener("click", async () => {
+    const discipline = link.dataset.discipline;
+    const endpoint = `/join/${discipline}`;
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: JSON.stringify({ discipline }),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const data = await res.json();
+      
+      location.assign(data.redirect);
+    }
+    catch (err) {
+      console.log(err);
+    }
+
+  });
+});
 
 const user = ul.dataset.user;
 const first = ul.dataset.first;

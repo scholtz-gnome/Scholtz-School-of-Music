@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  font-family: Lato, sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -63,13 +63,14 @@ h2 {
 
 .mainNav a:hover {
   color: #F1C54E;
+  cursor: pointer;
 }
 
 .drop-button {
   z-index: 4;
 }
 
-.join .drop-content {
+.mainNav__join .drop-content {
   position: absolute;
   width: 200px;
   height: 320px;
