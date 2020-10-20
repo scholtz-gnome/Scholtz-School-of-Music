@@ -17,7 +17,7 @@ const join_details_get = async (req, res) => {
   const registration_id = req.params.id;
   try {
     const registration = await Registration.findById(registration_id);
-    res.render("join/details", { registration });
+    res.render("join/details_one", { registration });
   }
   catch (err) {
     console.log(err);

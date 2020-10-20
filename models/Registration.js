@@ -6,7 +6,6 @@ const registrationSchema = new Schema({
   subdiscipline: String,
   lessons: Number,
   level: String,
-  age: Number,
   student: {
     parent: {
       is_parent: Boolean,
