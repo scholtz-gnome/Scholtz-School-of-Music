@@ -1,35 +1,87 @@
-#home {
-  margin: 21% 20%;
-}
-
-.home {
-  display: flex;
-}
-
-.home__sign-up {
-  background: #1D1D1B;
-  color: white;
-  padding: 2% 20%;
-}
-
-.home__sign-up div {
-  display: flex;
-  justify-content: center;
-}
-
-.home__sign-up section {
+/* - - - HEADER - - - */
+.home__header {
+  margin: 230px 20%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.home__sign-up .submit:hover {
+.home__header h1 {
+  min-width: 715px;
+}
+
+.home__header h4 {
+  margin-top: 7px;
+}
+
+/* - - - MAIN - - - */
+.home__main article {
+  padding: 90px 70px;
+}
+
+i {
+  height: 70px;
+  font-size: 39px;
+}
+
+/* - - - JOIN - - -  */
+.home__join {
   background: #F1C54E;
   color: #1D1D1B;
 }
 
+.home__join h5 {
+  margin: 10px 0px 20px 0px;
+}
+
+.home__join div {
+  display: flex;
+  justify-content: center;
+}
+
+.home__join section {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+  padding: 50px;
+  width: 300px;
+}
+
+.fa-drum, .fa-guitar {
+  margin-left: 9px;
+}
+
+.home__join .submit {
+  background: #F1C54E;
+  margin: 10px;
+}
+
+.home__join .submit:hover {
+  background: #1D1D1B;
+  color: #F1C54E;
+}
+
+.home__join p {
+  padding: 11% 7%;
+}
+
+/* - - - RESOURCES - - - */
+.home__resources section {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+  padding: 50px;
+  width: 300px;
+}
+
 .home__resources {
-  color: #1D1D1B;
-  padding: 2% 20%;
+  background: #1D1D1B;
+  color: white;
+}
+
+.home__resources h2 {
+  color: #F1C54E;
 }
 
 .home__resources div {
@@ -42,10 +94,28 @@
   flex-direction: column;
 }
 
-.home__contact {
-  background: #1D1D1B;
-  color: white;
-  padding: 2% 20%;
+.home__resources section:first-child {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.home__resources section:first-child p {
+  margin-top: 30px;
+}
+
+.home__resources .submit:hover {
+  border: 2.5px solid;
+}
+
+/* - - - CONTACT - - - */
+.home__contact h2 {
+  margin-top: 10px;
+}
+
+.home__contact p {
+  width: 400px;
+  margin: 20px auto 0px auto;
 }
 
 .home__contact div {
@@ -56,9 +126,11 @@
 .home__contact section {
   display: flex;
   flex-direction: column;
+  margin: 0px 10px;
+  padding: 40px 40px 10px 40px;
+  width: 300px;
 }
 
 .home__contact .submit:hover {
-  background: #F1C54E;
-  color: #1D1D1B;
+  background: #1D1D1B;
 }

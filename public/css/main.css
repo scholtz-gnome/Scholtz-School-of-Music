@@ -9,20 +9,34 @@ body {
 }
 
 h1 {
-  font-size: 40px;
-  font-weight: 900px;
+  font-size: 53px;
+  font-weight: 900;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 900;
 }
 
-/* Main Nav */
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+/*  - - - Main Nav - - - */
 .mainNav { /* <nav> */
   height: 80px;
   width: 100%;
-  padding: 0px 40px;
-  font-weight: 600;
+  padding: 0px 70px;
+  font-weight: 700;
   display: flex;
   box-shadow: 0px 6px 8px rgba(1, 1, 1, 0.09);
 }
@@ -35,7 +49,7 @@ h2 {
 }
 
 .mainNav div img { /* logo */
-  height: 59px;
+  height: 57px;
   width: auto;
   margin-right: 40%;
 }
@@ -58,7 +72,7 @@ h2 {
   align-items: center;
   height: 100%;
   width: 100%;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .mainNav a:hover {
@@ -179,16 +193,38 @@ footer {
   display: flex;
 }
 
+footer a:hover {
+  cursor: pointer;
+}
+
 .box {
-  min-height: 40px;
-  max-height: 90px;
-  padding: 5px 15px;
+  min-height: 200px;
   flex: 1;
-  background: #1D1D1B;
-  color: white;
+  background: #F1C54E;
+  color: #1D1D1B;
+}
+
+.one img {
+  width: 230px;
+  margin: 0 auto;
+}
+
+.one, .two, .three, .four {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 45px 0px;
+}
+
+.two a, .three a {
+  text-align: left;
+  padding: 3px 0px 3px 70px;
+  font-weight: 700;
+}
+
+.four p {
+  text-align: right;
+  padding: 3px 120px 3px 0px;
+  font-weight: 300;
 }
 
 @media screen and ( max-width: 925px ) {
