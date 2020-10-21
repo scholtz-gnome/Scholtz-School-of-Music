@@ -1,49 +1,37 @@
 <div class="outline">
-  <header>
-    <h1>Give us some more info</h1>
-  </header>
-  <main>
-  
-    <form>
-  
-      <p>You chose <%= registration.discipline %> as your discipline.</p>
-  
-      <div class="signup">
-  
-        <div class="input">
-          <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
-          <div class="disciplineErrors"></div>
+<header>
+  <h1>Give us some more info</h1>
+</header>
+<main>
+
+  <form class="details__one" data-id="<%= registration.id %>">
+
+    <div class="signup">
+
+      <div class="details">
+        <p>Are you a student or the parent of a student?</p>
+        <div class="details__div">
+          <div>
+            <label for="is_student" class="details__field">Student</label>
+            <input name="student" id="is_student" type="radio" value="student" required class="details__field">
+          </div>
+          <div>
+            <label for="is_parent" class="details__field">Parent</label>
+            <input name="student" id="is_parent" type="radio" value="parent" class="details__field">
+          </div>
         </div>
-  
-        <div class="input">
-          <input name="subdiscipline" id="subdiscipline" type="text" placeholder="e.g, Electric Guitar" class="field">
-          <div class="subdisciplineErrors"></div>
-        </div>
-  
-        <div class="input">
-          <input name="lessons" id="lessons" type="number" placeholder="# of lessons per week" class="field">
-          <div class="lessonsErrors"></div>
-        </div>
-  
-        <div class="input">
-          <label for="level">At what level are you in this discipline?</label>
-          <input list="levels" id="level" name="level" class="field">
-          <datalist id="levels">
-            <option value="absolute beginner"></option>
-            <option value="beginner"></option>
-            <option value="intermediate"></option>
-            <option value="advanced"></option>
-          </datalist>
-          <div class="levelErrors"></div>
-        </div>
-  
+        <div class="studentErrors"></div>
       </div>
+
+    </div>
+
+    <div class="submit">
+      <button>Next</button>
+    </div>
+
+  </form>
   
-      <div class="submit">
-        <button>Sign Up</button>
-      </div>
-  
-    </form>
-  
-  </main>
-  </div>
+</main>
+</div>
+
+<script src="/js/details_one.js"></script>

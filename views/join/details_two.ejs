@@ -7,17 +7,16 @@
   <form>
 
     <p>You chose <%= registration.discipline %> as your discipline.</p>
-
+    <% if (registration.student.parent.is_parent === true) { %>
+      <p>Please enter your child's details below</p>
+    <% } else { %>
+      <p>Please enter your details below</p>
+    <% } %>
     <div class="signup">
 
       <div class="input">
         <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
         <div class="disciplineErrors"></div>
-      </div>
-
-      <div class="input">
-        <input name="subdiscipline" id="subdiscipline" type="text" placeholder="e.g, Electric Guitar" class="field">
-        <div class="subdisciplineErrors"></div>
       </div>
 
       <div class="input">
