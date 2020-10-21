@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 
 const registrationSchema = new Schema({
   discipline: String,
-  subdiscipline: String,
   lessons: Number,
   level: String,
-  age: Number,
   student: {
+    process: {
+      type: Number,
+      default: 0
+    },
     parent: {
       is_parent: Boolean,
       first: String,

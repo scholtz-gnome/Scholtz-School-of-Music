@@ -17,20 +17,38 @@ const join_details_get = async (req, res) => {
   const registration_id = req.params.id;
   try {
     const registration = await Registration.findById(registration_id);
-    res.render("join/details", { registration });
+    console.log(registration.student.process);
+    if (registration.student.process === 0) {
+      res.render("join/details_one", { registration });
+    } else if (registration.student.process === 1) {
+      res.render("join/details_two", { registration });
+    }
   }
   catch (err) {
     console.log(err);
   }
 }
 
-const join_details_post = (req, res) => {
-  
+const details_patch = async (req, res) => {
+  const id = req.params.id;
+  const student = req.body;
+  try {
+    if (student.student === "student") {
+      const registration = await Registration.findByIdAndUpdate(id, { student: { process: 1, student: { is_student: true } } });
+      res.status(200).json({ redirect: `/join/${registration._id}` });
+    } else {
+      const registration = await Registration.findByIdAndUpdate(id, { student: { process: 1, parent: { is_parent: true } } });
+      res.status(200).json({ redirect: `/join/${registration._id}` });
+    }
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
 
 module.exports = {
   join_get,
   join_post,
   join_details_get,
-  join_details_post
+  details_patch
 }

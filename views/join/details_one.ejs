@@ -1,0 +1,37 @@
+<div class="outline">
+<header>
+  <h1>Give us some more info</h1>
+</header>
+<main>
+
+  <form class="details__one" data-id="<%= registration.id %>">
+
+    <div class="signup">
+
+      <div class="details">
+        <p>Are you a student or the parent of a student?</p>
+        <div class="details__div">
+          <div>
+            <label for="is_student" class="details__field">Student</label>
+            <input name="student" id="is_student" type="radio" value="student" required class="details__field">
+          </div>
+          <div>
+            <label for="is_parent" class="details__field">Parent</label>
+            <input name="student" id="is_parent" type="radio" value="parent" class="details__field">
+          </div>
+        </div>
+        <div class="studentErrors"></div>
+      </div>
+
+    </div>
+
+    <div class="submit">
+      <button>Next</button>
+    </div>
+
+  </form>
+  
+</main>
+</div>
+
+<script src="/js/details_one.js"></script>

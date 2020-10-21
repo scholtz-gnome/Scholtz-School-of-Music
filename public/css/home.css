@@ -104,8 +104,16 @@ i {
   margin-top: 30px;
 }
 
+.home__resources .submit {
+  background: #1D1D1B;
+  color: white;
+  border: 2.5px solid white;
+}
+
 .home__resources .submit:hover {
-  border: 2.5px solid;
+  background: #F1C54E;
+  color: #1D1D1B;
+  border: 2.5px solid #1D1D1B;
 }
 
 /* - - - CONTACT - - - */
