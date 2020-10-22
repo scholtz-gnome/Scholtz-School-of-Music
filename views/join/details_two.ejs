@@ -3,10 +3,10 @@
     <h1>Student Details 1</h1>
   </header>
   <main>
-    <form class="details__two" data-id="<%= registration.id %>" data-process="<%= registration.student.process %>">
+    <form class="details__two" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
       
       <div class="signup">
-<p><%= registration.student.process %></p>
+<p><%= registration.process %></p>
         <div class="input">
           <% if (registration.student.parent.is_parent) { %>
             <label for="discipline">Enter your child's chosen discipline:</label>
@@ -35,10 +35,10 @@
           <% } %>
           <input list="levels" id="level" name="level" class="field">
           <datalist id="levels">
-            <option value="absolute beginner"></option>
-            <option value="beginner"></option>
-            <option value="intermediate"></option>
-            <option value="advanced"></option>
+            <option value="Absolute Beginner"></option>
+            <option value="Beginner"></option>
+            <option value="Intermediate"></option>
+            <option value="Advanced"></option>
           </datalist>
           <div class="levelErrors"></div>
         </div>

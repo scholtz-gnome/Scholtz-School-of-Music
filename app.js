@@ -11,6 +11,7 @@ const resourcesRouter = require("./routes/resourcesRouter");
 const contactRouter = require("./routes/contactRouter");
 const accountRouter = require("./routes/accountRouter");
 const joinRouter = require("./routes/joinRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // Middleware
 app.use(expressLayouts);
@@ -39,6 +40,8 @@ app.use("/resources", resourcesRouter);
 app.use("/contact", contactRouter);
 
 app.use("/account", accountRouter);
+
+app.use("/dashboard", dashboardRouter);
 
 app.use((req, res) => res.render("404"));
 

@@ -17,7 +17,7 @@ const join_details_get = async (req, res) => {
   const registration_id = req.params.id;
   try {
     const registration = await Registration.findById(registration_id);
-    const registrationProcess = registration.student.process; 
+    const registrationProcess = registration.process; 
 
     if (registrationProcess === 0) {
       res.render("join/details_one", { registration });
@@ -44,17 +44,17 @@ const details_patch = async (req, res) => {
 
     if (registrationProcess === 0) {
       if (student === "student") {
-        const registration = await Registration.findByIdAndUpdate(id, { student: { process: 2, student: { is_student: true } } });
+        const registration = await Registration.findByIdAndUpdate(id, { process: 2, student: { student: { is_student: true } } });
         res.status(200).json({ redirect: `/join/${registration._id}` });
       } else {
-        const registration = await Registration.findByIdAndUpdate(id, { student: { process: 1, parent: { is_parent: true } } });
+        const registration = await Registration.findByIdAndUpdate(id, { process: 1, student: { parent: { is_parent: true } } });
         res.status(200).json({ redirect: `/join/${registration._id}` });
       }
     } else if (registrationProcess === 1) {
-      const registration = await Registration.findByIdAndUpdate(id, { student: { parent: { first, last, email, cell, is_parent: true }, process: 2 } });
+      const registration = await Registration.findByIdAndUpdate(id, { process: 2, student: { parent: { first, last, email, cell, is_parent: true } } });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     } else if (registrationProcess === 2) {
-      const registration = await Registration.findOneAndUpdate(id, { discipline, lessons, level, student: { process: 3 } });
+      const registration = await Registration.findOneAndUpdate(id, { discipline, lessons, level, process: 3 });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     }
   }

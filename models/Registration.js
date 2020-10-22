@@ -5,11 +5,11 @@ const registrationSchema = new Schema({
   discipline: String,
   lessons: Number,
   level: String,
+  process: {
+    type: Number,
+    default: 0
+  },
   student: {
-    process: {
-      type: Number,
-      default: 0
-    },
     parent: {
       is_parent: Boolean,
       first: String,

@@ -1,0 +1,14 @@
+<header>
+  <h1>Registrations</h1>
+</header>
+<main>
+  <h2>See all your registrations here:</h2>
+  <div class="outline">
+  <% registrations.forEach(registration => { %>
+    <div style="border: 1px solid grey; border-radius: 5px; margin: 5px; padding: 5px;">
+      <p><%= registration.level %> | <%= registration.discipline %> Student | Lessons per week: <%= registration.lessons %></p>
+      <p>Registered on <%= `${registration.submitted_at.getDate()} / ${registration.submitted_at.getMonth() + 1} / ${registration.submitted_at.getFullYear()};` %></p>
+    </div>
+  <% }); %>
+  </div>
+</main>

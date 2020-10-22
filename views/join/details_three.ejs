@@ -6,29 +6,44 @@
     <form class="details__three" data-id="<%= registration.id %>">
       
       <div class="signup">
+
+        <% if (registration.student.parent.is_parent) { %>
+          <p>Please enter your child's details below</p>
+        <% } %>
   
         <div class="input">
-          <label for="discipline">Enter your child's chosen discipline:</label>
-          <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
-          <div class="disciplineErrors"></div>
+          <input name="first" id="first" type="text" placeholder="first name" class="field">
+          <div class="firstErrors"></div>
         </div>
   
         <div class="input">
-          <label for="lessons">How many lessons will your child take per week?</label>
-          <input name="lessons" id="lessons" type="number" placeholder="# of lessons per week" class="field">
-          <div class="lessonsErrors"></div>
+          <input name="last" id="last" type="text" placeholder="last name" class="field">
+          <div class="lastErrors"></div>
         </div>
   
         <div class="input">
-          <label for="level">At what level is your child in this discipline?</label>
-          <input list="levels" id="level" name="level" class="field">
-          <datalist id="levels">
-            <option value="absolute beginner"></option>
-            <option value="beginner"></option>
-            <option value="intermediate"></option>
-            <option value="advanced"></option>
+          <input id="age" name="age" type="number" placeholder="age" class="field">
+          <div class="ageErrors"></div>
+        </div>
+        
+        <div class="input">
+          <input list="genders" id="level" name="level" placeholder="gender" class="field">
+          <datalist id="genders">
+            <option value="male"></option>
+            <option value="female"></option>
+            <option value="Rather not say"></option>
           </datalist>
-          <div class="levelErrors"></div>
+          <div class="genderErrors"></div>
+        </div>
+
+        <div class="input">
+          <input id="email" name="email" type="email" placeholder="email" class="field">
+          <div class="emailErrors"></div>
+        </div>
+
+        <div class="input">
+          <input id="cell" name="cell" type="tel" placeholder="cell number" class="field">
+          <div class="cellErrors"></div>
         </div>
   
       </div>
