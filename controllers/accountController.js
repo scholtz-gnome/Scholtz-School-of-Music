@@ -76,7 +76,7 @@ const signup_post = async (req, res) => {
       }
     });
 
-    ejs.renderFile("./views/email/verify2.ejs", { first, last, id: user.id, randomString, email }, (err, data) => {
+    ejs.renderFile("./views/email/verify.ejs", { first, last, id: user.id, randomString, email }, (err, data) => {
       if (err) {
         console.log(err)
       } else {
