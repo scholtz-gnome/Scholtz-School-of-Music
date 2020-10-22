@@ -1,38 +1,26 @@
 <div class="outline">
   <header>
-    <h1>Student Details 1</h1>
+    <h1>Student Details 2</h1>
   </header>
   <main>
-    <form class="details__two" data-id="<%= registration.id %>" data-process="<%= registration.student.process %>">
+    <form class="details__three" data-id="<%= registration.id %>">
       
       <div class="signup">
-<p><%= registration.student.process %></p>
+  
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
-            <label for="discipline">Enter your child's chosen discipline:</label>
-          <% } else { %>
-            <label for="discipline">Enter your chosen discipline:</label>
-          <% } %>
+          <label for="discipline">Enter your child's chosen discipline:</label>
           <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
           <div class="disciplineErrors"></div>
         </div>
   
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
-            <label for="lessons">How many lessons will your child take per week?</label>
-          <% } else { %>
-            <label for="lessons">How many lessons will you take per week?</label>
-          <% } %>
+          <label for="lessons">How many lessons will your child take per week?</label>
           <input name="lessons" id="lessons" type="number" placeholder="# of lessons per week" class="field">
           <div class="lessonsErrors"></div>
         </div>
   
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
-            <label for="level">At what level is your child in this discipline?</label>
-          <% } else { %>
-            <label for="level">At what level are you in this discipline?</label>
-          <% } %>
+          <label for="level">At what level is your child in this discipline?</label>
           <input list="levels" id="level" name="level" class="field">
           <datalist id="levels">
             <option value="absolute beginner"></option>
@@ -52,5 +40,3 @@
     </form>
   </main>
   </div>
-
-  <script src="/js/details_two.js"></script>

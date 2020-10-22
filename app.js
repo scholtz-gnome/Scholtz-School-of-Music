@@ -48,7 +48,8 @@ app.use((req, res) => res.render("404"));
     await mongoose.connect(config.DB_CONNECTION, { 
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true
+      useCreateIndex: true,
+      useFindAndModify: false
     });
     console.log("Connected to DB");
     app.listen(config.PORT || 3000, () => console.log(`Listening for requests on port ${config.PORT}`));
