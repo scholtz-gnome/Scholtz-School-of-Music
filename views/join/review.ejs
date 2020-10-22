@@ -1,0 +1,51 @@
+<div class="outline">
+  <header>
+    <h1>Review your registration</h1>
+  </header>
+  <main>
+    <h4>Are these details correct?</h4>
+    <form class="review" data-id="<%= registration.id %>">
+      
+      <div class="signup">
+  
+        <div class="input">
+          <% if (registration.is_parent) { %>
+            <p>You, <%= `${registration.parent.first} ${registration.parent.last}` %>, are the parent of <%= `${registration.student.first} ${registration.student.last}` %></p>
+          <% } else { %>
+            <p>Name: <%= `${registration.student.first} ${registration.student.last}` %></p>
+          <% } %>
+        </div>
+  
+        <div class="input">
+          <p>Discipline: <%= registration.discipline %></p>
+        </div>
+  
+        <div class="input">
+          <p>Level: <%= registration.level %></p>
+        </div>
+
+        <div class="input">
+          <p>Lessons per week: <%= registration.lessons %></p>
+        </div>
+
+        <div class="input">
+          <% if (registration.is_parent) { %>
+            <p>Email address: <%= registration.parent.email %></p>
+          <% } else { %>
+            <p>Email address: <%= registration.student.email %></p>
+          <% } %>
+        </div>
+
+        <div class="input">
+          
+        </div>
+  
+      </div>
+  
+      <div class="submit">
+        <button>Confirm</button>
+      </div>
+  
+    </form>
+  </main>
+</div>

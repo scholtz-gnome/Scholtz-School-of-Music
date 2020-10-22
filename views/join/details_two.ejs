@@ -6,9 +6,9 @@
     <form class="details__two" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
       
       <div class="signup">
-<p><%= registration.process %></p>
+
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
+          <% if (registration.is_parent) { %>
             <label for="discipline">Enter your child's chosen discipline:</label>
           <% } else { %>
             <label for="discipline">Enter your chosen discipline:</label>
@@ -18,7 +18,7 @@
         </div>
   
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
+          <% if (registration.is_parent) { %>
             <label for="lessons">How many lessons will your child take per week?</label>
           <% } else { %>
             <label for="lessons">How many lessons will you take per week?</label>
@@ -28,7 +28,7 @@
         </div>
   
         <div class="input">
-          <% if (registration.student.parent.is_parent) { %>
+          <% if (registration.is_parent) { %>
             <label for="level">At what level is your child in this discipline?</label>
           <% } else { %>
             <label for="level">At what level are you in this discipline?</label>

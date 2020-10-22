@@ -27,6 +27,8 @@ const join_details_get = async (req, res) => {
       res.render("join/details_two", { registration });
     } else if (registrationProcess === 3) {
       res.render("join/details_three", { registration })
+    } else if (registrationProcess === 4) {
+      res.render("join/review", { registration });
     }
 
   }
@@ -38,23 +40,26 @@ const join_details_get = async (req, res) => {
 const details_patch = async (req, res) => {
 
   const id = req.params.id;
-  const { student, registrationProcess, first, last, email, cell, discipline, lessons, level } = req.body;
+  const { age, gender, student, registrationProcess, first, last, email, cell, discipline, lessons, level } = req.body;
 
   try {
 
     if (registrationProcess === 0) {
       if (student === "student") {
-        const registration = await Registration.findByIdAndUpdate(id, { process: 2, student: { student: { is_student: true } } });
+        const registration = await Registration.findByIdAndUpdate(id, { process: 2, is_parent: false });
         res.status(200).json({ redirect: `/join/${registration._id}` });
       } else {
-        const registration = await Registration.findByIdAndUpdate(id, { process: 1, student: { parent: { is_parent: true } } });
+        const registration = await Registration.findByIdAndUpdate(id, { process: 1, is_parent: true });
         res.status(200).json({ redirect: `/join/${registration._id}` });
       }
     } else if (registrationProcess === 1) {
-      const registration = await Registration.findByIdAndUpdate(id, { process: 2, student: { parent: { first, last, email, cell, is_parent: true } } });
+      const registration = await Registration.findByIdAndUpdate(id, { process: 2, parent: { first, last, email, cell } });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     } else if (registrationProcess === 2) {
       const registration = await Registration.findOneAndUpdate(id, { discipline, lessons, level, process: 3 });
+      res.status(200).json({ redirect: `/join/${registration._id}` });
+    } else if (registrationProcess === 3) {
+      const registration = await Registration.findOneAndUpdate(id, { student: { age, gender, first, last, email, cell }, process: 4 });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     }
   }
@@ -63,9 +68,14 @@ const details_patch = async (req, res) => {
   }
 }
 
+const complete_get = async (req, res) => {
+  
+}
+
 module.exports = {
   join_get,
   join_post,
   join_details_get,
-  details_patch
+  details_patch,
+  complete_get
 }

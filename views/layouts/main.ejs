@@ -50,33 +50,35 @@
         </div>
       </li>
 
-      <% if (user.role.admin) { %>
-        <li class="dropdown account-user">
-          <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
+      <% if (user) { %>
+        <% if (user.role.admin) { %>
+          <li class="dropdown account-user">
+            <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
+            <div class="drop-content">
+              <a href="/dashboard">Students</a>
+              <a href="/dashboard/registrations">Registrations</a>
+              <a href="/account/logout">Logout</a>
+            </div>
+          </li>
+        <% } else if (user) { %>  
+          <li class="dropdown account-user">
+            <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
+            <div class="drop-content">
+              <a href="/account/lessons">Lessons</a>
+              <a href="/account/invoices">Invoices</a>
+              <a href="/account/logout">Logout</a>
+            </div>
+          </li>
+        <% } %>
+      <% } else { %>
+        <li class="dropdown account-noUser">
+          <button class="drop-button"><a href="/account">Account</a></button>
           <div class="drop-content">
-            <a href="/dashboard">Students</a>
-            <a href="/dashboard/registrations">Registrations</a>
-            <a href="/account/logout">Logout</a>
+            <a href="/account/login">Log In</a>
+            <a href="/account/signup">Sign Up</a>
           </div>
         </li>
-      <% } else if (user) { %>
-        <li class="dropdown account-user">
-          <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
-          <div class="drop-content">
-            <a href="/account/lessons">Lessons</a>
-            <a href="/account/invoices">Invoices</a>
-            <a href="/account/logout">Logout</a>
-          </div>
-        </li>
-    <% } else { %>
-      <li class="dropdown account-noUser">
-        <button class="drop-button"><a href="/account">Account</a></button>
-        <div class="drop-content">
-          <a href="/account/login">Log In</a>
-          <a href="/account/signup">Sign Up</a>
-        </div>
-      </li>
-    <% } %>
+      <% } %>
     </ul>
     
   </nav>

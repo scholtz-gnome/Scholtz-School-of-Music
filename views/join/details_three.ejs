@@ -3,11 +3,11 @@
     <h1>Student Details 2</h1>
   </header>
   <main>
-    <form class="details__three" data-id="<%= registration.id %>">
+    <form class="details__three" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
       
       <div class="signup">
 
-        <% if (registration.student.parent.is_parent) { %>
+        <% if (registration.is_parent) { %>
           <p>Please enter your child's details below</p>
         <% } %>
   
@@ -27,7 +27,7 @@
         </div>
         
         <div class="input">
-          <input list="genders" id="level" name="level" placeholder="gender" class="field">
+          <input list="genders" id="gender" name="gender" placeholder="gender" class="field">
           <datalist id="genders">
             <option value="male"></option>
             <option value="female"></option>
@@ -55,3 +55,5 @@
     </form>
   </main>
   </div>
+
+  <script src="/js/details_three.js"></script>
