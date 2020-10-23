@@ -14,9 +14,9 @@ const join_post = async (req, res) => {
 }
 
 const join_details_get = async (req, res) => {
-  const registration_id = req.params.id;
+  const id = req.params.id;
   try {
-    const registration = await Registration.findById(registration_id);
+    const registration = await Registration.findById(id);
     const registrationProcess = registration.process; 
 
     if (registrationProcess === 0) {
@@ -56,10 +56,10 @@ const details_patch = async (req, res) => {
       const registration = await Registration.findByIdAndUpdate(id, { process: 2, parent: { first, last, email, cell } });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     } else if (registrationProcess === 2) {
-      const registration = await Registration.findOneAndUpdate(id, { discipline, lessons, level, process: 3 });
+      const registration = await Registration.findByIdAndUpdate(id, { discipline, lessons, level, process: 3 });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     } else if (registrationProcess === 3) {
-      const registration = await Registration.findOneAndUpdate(id, { student: { age, gender, first, last, email, cell }, process: 4 });
+      const registration = await Registration.findByIdAndUpdate(id, { student: { age, gender, first, last, email, cell }, process: 4 });
       res.status(200).json({ redirect: `/join/${registration._id}` });
     }
   }

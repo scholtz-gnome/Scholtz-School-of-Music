@@ -88,3 +88,25 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+.input__double {
+  display: flex;
+}
+
+.input__double .left {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input__double .right {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#level::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+#gender::-webkit-calendar-picker-indicator {
+  display: none;
+}

@@ -12,8 +12,6 @@ form.addEventListener("submit", async (e) => {
 
   const endpoint = `/join/${id}`;
 
-  console.log("Registration process: ", registrationProcess);
-
   try {
     const res = await fetch(endpoint, {
       method: "PATCH",
