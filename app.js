@@ -11,6 +11,7 @@ const resourcesRouter = require("./routes/resourcesRouter");
 const contactRouter = require("./routes/contactRouter");
 const accountRouter = require("./routes/accountRouter");
 const joinRouter = require("./routes/joinRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // Middleware
 app.use(expressLayouts);
@@ -40,6 +41,8 @@ app.use("/contact", contactRouter);
 
 app.use("/account", accountRouter);
 
+app.use("/dashboard", dashboardRouter);
+
 app.use((req, res) => res.render("404"));
 
 // Connect to DB
@@ -48,7 +51,8 @@ app.use((req, res) => res.render("404"));
     await mongoose.connect(config.DB_CONNECTION, { 
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true
+      useCreateIndex: true,
+      useFindAndModify: false
     });
     console.log("Connected to DB");
     app.listen(config.PORT || 3000, () => console.log(`Listening for requests on port ${config.PORT}`));

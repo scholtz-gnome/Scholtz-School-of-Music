@@ -1,0 +1,39 @@
+<div class="outline">
+  <header>
+    <h1>Upload a resources here</h1>
+  </header>
+  <main>
+    <form method="POST" action="/resources/upload" enctype="multipart/form-data">
+
+      <div class="signup">
+
+        <div class="input">
+          <input name="title" id="title" type="text" placeholder="resource title" autofocus class="field">
+          <div class="titleErrors"></div>
+        </div>
+
+        <div class="input">
+          <input list="categories" id="category" name="category" class="field">
+          <datalist id="categories">
+            <option value="guitar"></option>
+            <option value="drums"></option>
+            <option value="bass"></option>
+            <option value="theory"></option>
+          </datalist>
+          <div class="categoryErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="resource" id="resource" type="file" placeholder="upload resource" class="field">
+          <div class="resourceErrors"></div>
+        </div>
+
+      </div>
+
+      <div class="submit">
+        <button>Upload Resource</button>
+      </div>
+
+    </form>
+  </main>
+</div>

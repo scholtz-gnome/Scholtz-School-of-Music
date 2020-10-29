@@ -1,0 +1,32 @@
+<header>
+  <h1>Registrations</h1>
+</header>
+<main>
+  <h2>See all your registrations here:</h2>
+  <div class="outline">
+  <% registrations.forEach(registration => { %>
+    <div style="border: 1px solid grey; border-radius: 5px; margin: 5px; padding: 5px;">
+      <ul style="font-size: 12px;">
+        <li><%= registration.id %></li>
+        <li>Registration Process: <%= registration.process %></li>
+        <li style="color: purple; font-weight: 800;">Parent: <%= registration.is_parent %></li>
+      <% if (registration.is_parent) { %>
+        <li style="color: red;"><%= registration.parent.first %></li>
+        <li style="color: red;"><%= registration.parent.last %></li>
+        <li style="color: red;"><%= registration.parent.email %></li>
+        <li style="color: red;"><%= registration.parent.cell %></li>
+      <% } %>
+        <li>Discipline: <%= registration.discipline %></li>
+        <li>Level: <%= registration.level %></li>
+        <li>Lessons: <%= registration.lessons %></li>
+        <li style="color: blue;"><%= registration.student.first %></li>
+        <li style="color: blue;"><%= registration.student.last %></li>
+        <li style="color: blue;"><%= registration.student.age %></li>
+        <li style="color: blue;"><%= registration.student.gender %></li>
+        <li style="color: blue;"><%= registration.student.email %></li>
+        <li style="color: blue;"><%= registration.student.cell %></li>
+      </ul>
+    </div>
+  <% }); %>
+  </div>
+</main>

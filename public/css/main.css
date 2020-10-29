@@ -97,7 +97,7 @@ h5 {
 .resources .drop-content {
   position: absolute;
   width: 200px;
-  height: 80px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   z-index: -1;
@@ -198,7 +198,7 @@ footer a:hover {
 }
 
 .box {
-  min-height: 200px;
+  min-height: 170px;
   flex: 1;
   background: #F1C54E;
   color: #1D1D1B;

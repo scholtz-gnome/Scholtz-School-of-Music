@@ -1,48 +1,56 @@
 <div class="outline">
-<header>
-  <h1>Give us some more info</h1>
-</header>
-<main>
+  <header>
+    <h1>Student Details 1</h1>
+  </header>
+  <main>
+    <form class="details__two" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
+      
+      <div class="signup">
 
-  <form>
-
-    <p>You chose <%= registration.discipline %> as your discipline.</p>
-    <% if (registration.student.parent.is_parent === true) { %>
-      <p>Please enter your child's details below</p>
-    <% } else { %>
-      <p>Please enter your details below</p>
-    <% } %>
-    <div class="signup">
-
-      <div class="input">
-        <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
-        <div class="disciplineErrors"></div>
+        <div class="input">
+          <% if (registration.is_parent) { %>
+            <label for="discipline">Enter your child's chosen discipline:</label>
+          <% } else { %>
+            <label for="discipline">Enter your chosen discipline:</label>
+          <% } %>
+          <input name="discipline" id="discipline" value="<%= `${registration.discipline[0].toUpperCase()}${registration.discipline.slice(1, registration.discipline.length)}` %>" type="text" placeholder="<%= registration.discipline %>" class="field">
+          <div class="disciplineErrors"></div>
+        </div>
+  
+        <div class="input">
+          <% if (registration.is_parent) { %>
+            <label for="lessons">How many lessons will your child take per week?</label>
+          <% } else { %>
+            <label for="lessons">How many lessons will you take per week?</label>
+          <% } %>
+          <input name="lessons" id="lessons" type="number" placeholder="# of lessons per week" class="field">
+          <div class="lessonsErrors"></div>
+        </div>
+  
+        <div class="input">
+          <% if (registration.is_parent) { %>
+            <label for="level">At what level is your child in this discipline?</label>
+          <% } else { %>
+            <label for="level">At what level are you in this discipline?</label>
+          <% } %>
+          <input list="levels" id="level" name="level" class="field">
+          <datalist id="levels">
+            <option value="Absolute Beginner"></option>
+            <option value="Beginner"></option>
+            <option value="Intermediate"></option>
+            <option value="Advanced"></option>
+          </datalist>
+          <div class="levelErrors"></div>
+        </div>
+  
       </div>
-
-      <div class="input">
-        <input name="lessons" id="lessons" type="number" placeholder="# of lessons per week" class="field">
-        <div class="lessonsErrors"></div>
+  
+      <div class="submit">
+        <button>Next</button>
       </div>
+  
+    </form>
+  </main>
+  </div>
 
-      <div class="input">
-        <label for="level">At what level are you in this discipline?</label>
-        <input list="levels" id="level" name="level" class="field">
-        <datalist id="levels">
-          <option value="absolute beginner"></option>
-          <option value="beginner"></option>
-          <option value="intermediate"></option>
-          <option value="advanced"></option>
-        </datalist>
-        <div class="levelErrors"></div>
-      </div>
-
-    </div>
-
-    <div class="submit">
-      <button>Sign Up</button>
-    </div>
-
-  </form>
-
-</main>
-</div>
+  <script src="/js/details_two.js"></script>

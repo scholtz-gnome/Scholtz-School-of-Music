@@ -1,0 +1,40 @@
+<div class="outline">
+  <header>
+    <h1>Parent Details</h1>
+  </header>
+  <main>
+    <form class="parent__details" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
+      
+      <div class="signup">
+  
+        <div class="input">
+          <input name="first" id="first" type="text" placeholder="first name" class="field">
+          <div class="firstErrors"></div>
+        </div>
+  
+        <div class="input">
+          <input name="last" id="last" type="text" placeholder="last name" class="field">
+          <div class="lastErrors"></div>
+        </div>
+  
+        <div class="input">
+          <input name="email" id="email" type="email" placeholder="email" class="field">
+          <div class="emailErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="cell" id="cell" type="tel" placeholder="cell number" class="field">
+          <div class="cellErrors"></div>
+        </div>
+  
+      </div>
+  
+      <div class="submit">
+        <button>Next</button>
+      </div>
+  
+    </form>
+  </main>
+  </div>
+  
+  <script src="/js/parent_details.js"></script>

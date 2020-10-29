@@ -1,0 +1,118 @@
+<div class="outline">
+  <header>
+    <h1>Review your registration</h1>
+  </header>
+  <main>
+    <h4>Are these details correct?</h4>
+    <form class="review" data-id="<%= registration.id %>" data-process="<%= registration.process %>">
+      
+      <div class="signup">
+
+        <div class="input">
+          <h3>Student Details</h3>
+        </div>
+
+        <div class="input">
+          <input name="first" id="first" type="text" value="<%= registration.student.first %>" class="field">
+          <div class="firstErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="last" id="last" type="text" value="<%= registration.student.last %>" class="field">
+          <div class="lastErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="email" id="email" type="text" value="<%= registration.student.email %>" class="field">
+          <div class="emailErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="cell" id="cell" type="text" value="<%= registration.student.cell %>" class="field">
+          <div class="cellErrors"></div>
+        </div>
+
+        <div class="input">
+          <div class="input__double">
+            <div class="left">
+              <label for="age">Age</label>
+              <input name="age" id="age" type="text" value="<%= registration.student.age %>" class="field">
+              <div class="ageErrors"></div>
+            </div>
+            <div class="right">
+              <label for="gender">Gender</label>
+              <input list="genders" id="gender" name="gender" value="<%= registration.student.gender %>" class="field">
+              <datalist id="genders">
+                <option value="male"></option>
+                <option value="female"></option>
+                <option value="Rather not say"></option>
+              </datalist>
+              <div class="levelErrors"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input">
+          <label for="discipline">Discipline</label>
+          <input name="discipline" id="discipline" type="text" value="<%= registration.discipline %>" class="field">
+          <div class="disciplineErrors"></div>
+        </div>
+
+        <div class="input">
+          <div class="input__double">
+            <div class="left">
+              <label for="lessons">Lessons</label>
+              <input name="lessons" id="lessons" type="text" value="<%= registration.lessons %>" class="field">
+              <div class="lessonsErrors"></div>
+            </div>
+            <div class="right">
+              <label for="level">Level</label>
+              <input list="levels" id="level" name="level" value="<%= registration.level %>" class="field">
+              <select id="levels">
+                <option value="Absolute Beginner"></option>
+                <option value="Beginner"></option>
+                <option value="Intermediate"></option>
+                <option value="Advanced"></option>
+              </select>
+              <div class="levelErrors"></div>
+            </div>
+          </div>
+        </div>     
+  
+      </div>
+      <% if (registration.is_parent) { %>
+      <div class="signup">
+        <h3>Parent Details</h3>
+
+        <div class="input">
+          <input name="parent_first" id="parent_first" type="text" value="<%= registration.parent.first %>" class="field">
+          <div class="parent_firstErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="parent_last" id="parent_last" type="text" value="<%= registration.parent.last %>" class="field">
+          <div class="parent_lastErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="parent_email" id="parent_email" type="text" value="<%= registration.parent.email %>" class="field">
+          <div class="parent_emailErrors"></div>
+        </div>
+
+        <div class="input">
+          <input name="parent_cell" id="parent_cell" type="text" value="<%= registration.parent.cell %>" class="field">
+          <div class="parent_cellErrors"></div>
+        </div>
+
+      </div>
+      <% } %>
+  
+      <div class="submit">
+        <button>Confirm</button>
+      </div>
+  
+    </form>
+  </main>
+</div>
+
+<script src="/js/review.js"></script>

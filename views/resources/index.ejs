@@ -3,4 +3,19 @@
 </header>
 <main>
   <button><a href="/resources/custom">Custom Resource</a></button>
+  <h2>See all resources here:</h2>
+  <div class="outline">
+  <% resources.forEach(resource => { %>
+    <div style="border: 1px solid grey; border-radius: 5px; margin: 5px; padding: 5px;">
+      <ul style="font-size: 12px;">
+        <li>Title: <%= resource.title %></li>
+        <li>Category: <%= resource.category %></li>
+        <li>File Path: <%= resource.filePath %></li>
+      </ul>
+      <form action="/resources/download/<%= resource.id %>" method="POST">
+        <button>Download Resource</button>
+      </form>
+    </div>
+  <% }); %>
+  </div>
 </main>
