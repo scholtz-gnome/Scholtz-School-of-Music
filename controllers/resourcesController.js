@@ -26,7 +26,7 @@ const upload_post = async (req, res) => {
   const file = {
     title: req.body.title,
     category: req.body.category,
-    filePath: `${req.file.path}`
+    filePath: `uploads/${req.file.filename}`
   }
   
   try {
