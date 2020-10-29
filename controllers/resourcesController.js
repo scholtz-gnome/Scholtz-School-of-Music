@@ -1,9 +1,5 @@
 const Resource = require("../models/Resource");
 
-const fs = require("fs");
-const path = require("path");
-const { findById } = require("../models/Resource");
-
 const resources_get = async (req, res) => {
 
   try {
