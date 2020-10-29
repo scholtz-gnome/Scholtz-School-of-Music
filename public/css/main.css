@@ -97,7 +97,7 @@ h5 {
 .resources .drop-content {
   position: absolute;
   width: 200px;
-  height: 80px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   z-index: -1;
