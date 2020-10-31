@@ -1,5 +1,9 @@
-const ul = document.querySelector("ul");
+const dropdowns = document.querySelectorAll(".dropdown");
+const secondNav = document.querySelector(".secondNav");
+const secondUl = document.querySelector(".secondNav > ul");
 const links = document.querySelectorAll("[data-discipline]");
+const hamburger = document.querySelector(".fa-bars");
+const dropcontentLinks = document.querySelectorAll(".drop-content > a");
 
 links.forEach(link => {
   link.addEventListener("click", async () => {
@@ -24,47 +28,9 @@ links.forEach(link => {
   });
 });
 
-const user = ul.dataset.user;
-const first = ul.dataset.first;
-const last = ul.dataset.last;
+hamburger.addEventListener("click", e => {
 
-if (window.innerWidth <= 925) {
-  if (user) {
-    ul.innerHTML = `
-      <li class="dropdown account-user">
-        <button class="drop-button">Menu</button>
-        <div class="drop-content">
-          <a href="/join">Join</a>
-          <a href="/resources">Resources</a>
-          <a href="/contact">Find Answers</a>
-        </div>
-      </li>
-      <li class="dropdown account-user">
-        <button class="drop-button"><a href="/account">${first} ${last}</a></button>
-        <div class="drop-content">
-          <a href="/account/lessons">Lessons</a>
-          <a href="/account/invoices">Invoices</a>
-          <a href="/account/logout">Logout</a>
-        </div>
-      </li>
-    `;
-  } else {
-    ul.innerHTML = `
-    <li class="dropdown account-user">
-        <button class="drop-button">Menu</button>
-        <div class="drop-content">
-          <a href="/join">Join</a>
-          <a href="/resources">Resources</a>
-          <a href="/contact">Find Answers</a>
-        </div>
-      </li>
-    <li class="dropdown account-noUser">
-      <button class="drop-button"><a href="/account">Account</a></button>
-      <div class="drop-content">
-        <a href="/account/login">Log In</a>
-        <a href="/account/signup">Sign Up</a>
-      </div>
-    </li>
-  `;
-  }
-}
+  secondNav.classList.toggle("hidden");
+  
+
+});
