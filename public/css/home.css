@@ -20,7 +20,7 @@
   padding: 90px 70px;
 }
 
-i {
+.home__main i {
   height: 70px;
   font-size: 39px;
 }
@@ -141,4 +141,25 @@ i {
 
 .home__contact .submit:hover {
   background: #1D1D1B;
+}
+
+@media screen and ( max-width: 935px ) {
+
+  .home__header {
+    margin: 230px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home__header h1 {
+    min-width: 400px;
+  }
+
+  .home__header h4 {
+    margin-top: 7px;
+    min-width: 300px;
+  }
+
 }
