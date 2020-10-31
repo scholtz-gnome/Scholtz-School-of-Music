@@ -23,11 +23,17 @@
         <img class="img" src="/images/png_SSOM_logomark_charcoal.png" alt="logo">
       </a>
     </div>
+
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <% if (user) { %>
     <ul data-user="<%= user %>" data-first="<%= user.first %>" data-last="<%= user.last %>">
     <% } else { %>
     <ul>
     <% } %>
+    
       <li class="dropdown mainNav__join">
         <button class="drop-button"><a href="/join">Join</a></button>
         <div class="drop-content">
@@ -53,6 +59,7 @@
 
       <% if (user) { %>
         <% if (user.role.admin) { %>
+
           <li class="dropdown account-user">
             <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
             <div class="drop-content">
@@ -61,7 +68,9 @@
               <a href="/account/logout">Logout</a>
             </div>
           </li>
-        <% } else if (user) { %>  
+
+        <% } else if (user) { %>
+
           <li class="dropdown account-user">
             <button class="drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
             <div class="drop-content">
@@ -70,8 +79,10 @@
               <a href="/account/logout">Logout</a>
             </div>
           </li>
+
         <% } %>
       <% } else { %>
+
         <li class="dropdown account-noUser">
           <button class="drop-button"><a href="/account">Account</a></button>
           <div class="drop-content">
@@ -79,9 +90,41 @@
             <a href="/account/signup">Sign Up</a>
           </div>
         </li>
+
       <% } %>
+
     </ul>
     
+  </nav>
+
+  <nav class="secondNav hidden">
+
+  <% if (user) { %>
+    <ul data-user="<%= user %>" data-first="<%= user.first %>" data-last="<%= user.last %>">
+  <% } else { %>
+    <ul>
+  <% } %>
+  
+      <li class="secondDropdown">
+        <button class="second-drop-button"><a href="/join">Join</a></button>
+      </li>
+      <li class="secondDropdown">
+        <button class="second-drop-button"><a href="/resources">Resources</a></button>
+      </li>
+      <li class="secondDropdown">
+        <button class="second-drop-button"><a href="/contact">Find answers</a></button>
+      </li>
+
+  <% if (user) { %>
+      <li class="secondDropdown">
+        <button class="second-drop-button"><a href="/account"><%= `${user.first} ${user.last}` %></a></button>
+      </li>
+  <% } else { %>
+      <li class="secondDropdown">
+        <button class="second-drop-button"><a href="/account">Account</a></button>
+      </li>
+  <% } %>
+
   </nav>
 
 <!-- BODY -->

@@ -227,49 +227,96 @@ footer a:hover {
   font-weight: 300;
 }
 
-@media screen and ( max-width: 925px ) {
+.mainNav .hamburger {
+  display: none;
+}
 
-  h1 {
-    font-size: 30px;
-  }
+.hidden {
+  display: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+@media screen and ( max-width: 935px ) {
 
   .mainNav { /* <nav> */
-    height: 60px;
-    padding: 0px 15px;
+    padding: 0px 60px 0px 60px;
+  }
+
+  .mainNav a {
+    flex: 1;
+    justify-content: left;
+    align-content: left;
   }
 
   .mainNav div img { /* logo */
-    height: 48px;
-    margin-left: 20px;
-    margin-right: 0%;
+    height: 57px;
+    width: auto;
   }
 
-  .dropdown:hover > .drop-content {
-    top: 60px;
-  }
-
-  .account-user .drop-content {
-    width: 125px;
-    height: 180px;
+  .mainNav .hamburger {
+    flex: 0;
     display: flex;
+    height: 80px;
+    justify-content: center;
+    align-content: center;
   }
 
-  .account-user .drop-content li {
-    width: 125px;
+  .mainNav .hamburger .fa-bars {
+    display: block;
+    font-size: 40px;
+    height: 50%;
   }
 
-  .mainNav div { /* image div */
-    max-width: 30%;
+  .mainNav .hamburger .fa-bars:hover {
+    cursor: pointer;
   }
 
-  .mainNav div img {
-    margin: 0px;
+  .drop-content a {
+    display: none;
   }
 
-  .mainNav ul li {
-    flex-direction: column;
+  .dropdown {
+    display: none;
+  }
+
+  .secondNav {
+    background: #F1C54E;
+    z-index: 1;
+    width: 100vw;
+    font-weight: 700;
+    box-shadow: 0px 4px 4px rgba(1, 1, 1, 0.09);
+    transition: opacity 300ms;
+  }
+
+  .secondNav ul {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    box-shadow: inset 0px 7px 7px -5px rgba(1, 1, 1, 0.1);
+  }
+
+  .secondNav ul li {
+    flex: 1 0 95px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .secondNav a, .secondNav button {
+    color: #1D1D1B;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex: 7;
-    min-width: 125px;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
   }
+  
+  .secondNav a:hover {
+    color: #1D1D1B;
+    cursor: pointer;
+  }
+
 }
