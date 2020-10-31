@@ -146,7 +146,7 @@
 @media screen and ( max-width: 935px ) {
 
   .home__header {
-    margin: 230px 80px;
+    margin: 230px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,7 +154,7 @@
   }
 
   .home__header h1 {
-    min-width: 400px;
+    min-width: 300px;
   }
 
   .home__header h4 {
