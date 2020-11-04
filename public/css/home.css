@@ -18,6 +18,8 @@
 /* - - - MAIN - - - */
 .home__main article {
   padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
 }
 
 .home__main i {
@@ -37,6 +39,7 @@
 
 .home__join div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
